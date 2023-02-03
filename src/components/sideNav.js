@@ -15,7 +15,7 @@ export default function SideNav(){
 
   return (
      <div className='bg-transparent  w-3/12 h-screen space-y-3  pt-20'>
-        <div className={router.asPath != '/add' ? 'w-full bg-gray-200 hover:bg-[#F33823] hover:text-gray-50  mx-7 rounded-md py-3 ': 'w-full hover:bg-gray-200 hover:text-black bg-[#F33823] text-gray-50  mx-7 rounded-md py-3 '}>
+        <div className={!router.asPath.includes('add')  ? 'w-full bg-gray-200 hover:bg-[#F33823] hover:text-gray-50  mx-7 rounded-md py-3 ': 'w-full hover:bg-gray-200 hover:text-black bg-[#F33823] text-gray-50  mx-7 rounded-md py-3 '}>
           <Link  legacyBehavior href="/add">
             <a  className='flex flex-row items-center group justify-center space-x-7'>
               <div><img className='group-hover:invert' src="/user.svg"></img></div>
@@ -24,7 +24,7 @@ export default function SideNav(){
           </Link>
         </div>
        
-       <div className={router.asPath != '/manage' ? 'w-full bg-gray-200 hover:bg-[#F33823] hover:text-gray-50  mx-7 rounded-md py-3 ': 'w-full hover:bg-gray-200 hover:text-black bg-[#F33823] text-gray-50  mx-7 rounded-md py-3 '}>
+       <div className={!router.asPath.includes('/manage') ? 'w-full bg-gray-200 hover:bg-[#F33823] hover:text-gray-50  mx-7 rounded-md py-3 ': 'w-full hover:bg-gray-200 hover:text-black bg-[#F33823] text-gray-50  mx-7 rounded-md py-3 '}>
           <Link  legacyBehavior href="/manage">
             <a  className='flex flex-row items-center group justify-center space-x-7'>
               <div><img className='group-hover:invert' src="/manage.svg"></img></div>

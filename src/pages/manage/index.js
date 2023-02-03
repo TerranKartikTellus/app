@@ -4,6 +4,7 @@ import { useAuth } from '/src/lib/useAuth';
 import { useForm } from "react-hook-form";
 import toast, { Toaster } from 'react-hot-toast';
 import firebase from 'firebase';
+import Link from 'next/link';
 
 
 
@@ -297,17 +298,11 @@ const onSubmitUpdate = (data,e) => {
                     </div>
                   </button>
 
-                  <button onClick={
-                    () => { 
-                      setEdit(
-                      {...edit,data:i,view:!edit.view}
-                    );
-                    } 
-                  }>
+                  <Link href={`/manage/edit?id=${i.id}`}>
                     <div className='bg-[#F33823]  rounded-full p-1 hover:bg-opacity-80'>
                     <img src="/edit.svg" className='w-5 h-5  invert'></img>
                     </div>
-                  </button>
+                  </Link>
 
                   <button onClick={
                     () => { 
