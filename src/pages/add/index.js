@@ -100,17 +100,17 @@ export default function Add(){
             <select placeholder='Select Class' {...register("class",{required: true,})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30">
               {/* <option >Select Class</option> */}
               <option value="1">1</option>
-              <option value="1">2</option>
-              <option value="1">3</option>
-              <option value="1">4</option>
-              <option value="1">5</option>
-              <option value="1">6</option>
-              <option value="1">7</option>
-              <option value="1">8</option>
-              <option value="1">9</option>
-              <option value="1">10</option>
-              <option value="1">11</option>
-              <option value="1">12</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+              <option value="4">4</option>
+              <option value="5">5</option>
+              <option value="6">6</option>
+              <option value="7">7</option>
+              <option value="8">8</option>
+              <option value="9">9</option>
+              <option value="10">10</option>
+              <option value="11">11</option>
+              <option value="12">12</option>
             </select>
             <p className='b-400'>{errors.class?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
               
