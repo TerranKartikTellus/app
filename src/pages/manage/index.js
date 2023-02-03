@@ -106,133 +106,7 @@ const onSubmitUpdate = (data,e) => {
   }
   return (
    <div > 
-{
-  edit.view && <div className='fixed flex flex-col items-center justify-center  top-0 bg-gray-100/95 left-0 h-screen w-screen overflow-hidden'>
-    <div className='w-10/12 h-5/6'>
-      <Toaster
-        position="top-center"
-        reverseOrder={true}
-      />
-      <div className='flex text-lg mb-10 flex-row items-center justify-between w-full'>
-        <div>Edit Student</div>
-        <div>{time}</div>
-      </div>
-      <div className='w-full'>
-        <form className='w-full space-y-5 font-normal tracking-wider' >
 
-          {/* Row 1 */}
-          <div className='flex flex-row items-center justify-between space-x-5'>
-            <div className='w-1/3'>
-              <input defaultValue={edit.data.firstName} placeholder='First Name' {...register("firstName", { required: true, maxLength: 20 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.firstName?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-              <p className='b-400'>{errors.firstName?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              
-            </div>
-
-            <div className='w-1/3'>
-              <input defaultValue={edit.data.middleName} placeholder='Middle Name' {...register("middleName", { required: true, maxLength: 20 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.lastName?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-              <p className='b-400'>{errors.lastName?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              
-            </div>
-
-            <div className='w-1/3'>
-              <input  defaultValue={edit.data.lastName} placeholder='Last Name' {...register("lastName", { required: true, maxLength: 20 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.lastName?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-              <p className='b-400'>{errors.lastName?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              
-            </div>
-          </div>
-
-          {/* Row 2 */}
-          <div className='flex flex-row space-x-5 items-center justify-between'>
-
-          <div className='w-1/3'>
-            <select  defaultValue={edit.data.class} placeholder='Select Class' {...register("class",{required: true,})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30">
-              {/* <option >Select Class</option> */}
-              <option value="VI-A">VI-A</option>
-              <option value="VI-B">VI-B</option>
-              <option value="VI-C">VI-C</option>
-            </select>
-            <p className='b-400'>{errors.class?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-              
-          </div>
-
-          
-          <div className='w-1/3'>
-            <select  defaultValue={edit.data.devision} placeholder='Select Devision' {...register("devision",{required: true,})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30">
-              {/* <option >Select Division</option> */}
-              <option value="1">First</option>
-              <option value="2">Second</option>
-              <option value="3">Third</option>
-            </select>
-            <p className='b-400'>{errors.devision?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-              
-          </div>
-
-          
-          <div className='w-1/3'>
-            <input  defaultValue={edit.data.regno} placeholder='Enter roll number 0-99999' type="number" className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" {...register("regno", { required: true,min: 0, max: 99999 })} />
-            <p className='b-400'>{errors.regno?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
-            <p className='b-400'>{errors.regno?.type === 'min' && <p role="alert" className='text-sm pl-2'>Min  0</p>}</p>
-            <p className='b-400'>{errors.regno?.type === 'max' && <p role="alert" className='text-sm pl-2'>Max  99999</p>}</p>
-              
-          </div>
-          </div>
-
-            <div className='h-10'></div>
-          {/* /row 3 */}
-          <div className='flex flex-row items-center space-x-5  justify-between'>
-            <div className='w-1/2'>
-              <input  defaultValue={edit.data.addressLine1} placeholder='Address Line 1 (0-50) letters' {...register("addressLine1", { required: true, maxLength: 50 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.addressLine1?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              <p className='b-400'>{errors.addressLine1?.type === 'required' && <p role="alert" className='text-sm pl-2'>Address Line 1 is required</p>}</p>
-              
-            </div>
-
-            <div className='w-1/2'>
-              <input  defaultValue={edit.data.addressLine2} placeholder='Address Line 2 (0-50) letters' {...register("addressLine2", { required: true, maxLength: 50 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.addressLine2?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              <p className='b-400'>{errors.addressLine2?.type === 'required' && <p role="alert" className='text-sm pl-2'>Address Line 2 is required</p>}</p>
-              
-            </div>
-          </div>
-
-          {/* row 4 */}
-          <div className='flex space-x-5 flex-row items-center justify-between'>
-            <div className='w-1/3'>
-              <input  defaultValue={edit.data.landmark} placeholder='Landmark (0-20) letters' {...register("landmark", { required: true, maxLength: 20 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-              <p className='b-400'>{errors.landmark?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              <p className='b-400'>{errors.landmark?.type === 'required' && <p role="alert" className='text-sm pl-2'>Landmark is required</p>}</p>
-              
-            </div>
-
-            <div className='w-1/3'>
-              <input  defaultValue={edit.data.city} placeholder='City (0-20) letters' {...register("city", { required: true, maxLength: 20 })} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-                <p className='b-400'>{errors.city?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              <p className='b-400'>{errors.city?.type === 'required' && <p role="alert" className='text-sm pl-2'>City is required</p>}</p>
-            
-            </div>
-
-            <div className='w-1/3'>
-              <input  defaultValue={edit.data.pin} placeholder='Pin Code ' type={'number'} {...register("pin", { required: true, min: 0, max: 99999})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" />
-                <p className='b-400'>{errors.pin?.type === 'maxLength' && <p role="alert" className='text-sm pl-2'>Max length 20</p>}</p>
-              <p className='b-400'>{errors.pin?.type === 'required' && <p role="alert" className='text-sm pl-2'>Pin Code is required</p>}</p>
-            
-            </div>
-          </div>
-          <input onClick={()=>{
-            handleSubmit(onSubmitUpdate)
-            reset()
-          }} placeholder='Edit Student' className='hover:bg-opacity-80 bg-[#F33823] rounded-md py-2 text-white px-16 ml-5' type={"submit"}></input>
-        </form>
-      
-
-      </div>
-    </div>
- 
-  </div>
-}
 {blog.view && <div className='fixed top-0 left-0 flex flex-col items-center justify-center w-screen h-screen bg-gray-100/60 z-50'>
           <div className='shadow-2xl bg-gray-100 text-lg space-y-10 rounded-t-md  w-4/6 h-4/6 p-10'>
             <div className=' flex flex-row items-center justify-between space-x-5'>
@@ -244,16 +118,14 @@ const onSubmitUpdate = (data,e) => {
             <div className='flex flex-row items-center justify-between space-x-5'>
               <div>Class: {blog.data.class}</div>
               <div>Division: 
-                {blog.data.devision==1 && 'First' }
-                {blog.data.devision==2 && 'Second' }
-                {blog.data.devision==3 && 'Third' }
+                {blog.data.devision}
               </div>
               <div>Last Name: {blog.data.regno}</div>
             </div>
 
             <div className='flex flex-row items-center justify-between space-x-5'>
-              <div>First Name: {blog.data.addressLine1}</div>
-              <div>Middle Name: {blog.data.addressLine2}</div>
+              <div>Address Line 1: {blog.data.addressLine1}</div>
+              <div>Address Line 2: {blog.data.addressLine2}</div>
            </div>
 
             

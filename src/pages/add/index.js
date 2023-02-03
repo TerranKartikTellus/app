@@ -31,7 +31,7 @@ export default function Add(){
             .then(function(docRef) {
               console.log("Document written with ID: ", docRef.id);
               reset();
-              toast.success("Document written with ID: ", docRef.id,{
+              toast.success("Document written ", docRef.id,{
                 icon: '👏',
                 style: {
                   borderRadius: '10px',
