@@ -101,9 +101,19 @@ console.log(student);
           <div className='w-1/3'>
             <select defaultValue={student.class} placeholder='Select Class' {...register("class",{required: true,})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30">
               {/* <option >Select Class</option> */}
-              <option value="VI-A">VI-A</option>
-              <option value="VI-B">VI-B</option>
-              <option value="VI-C">VI-C</option>
+              <option value="1">1</option>
+              <option value="1">2</option>
+              <option value="1">3</option>
+              <option value="1">4</option>
+              <option value="1">5</option>
+              <option value="1">6</option>
+              <option value="1">7</option>
+              <option value="1">8</option>
+              <option value="1">9</option>
+              <option value="1">10</option>
+              <option value="1">11</option>
+              <option value="1">12</option>
+              
             </select>
             <p className='b-400'>{errors.class?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
               
@@ -113,9 +123,12 @@ console.log(student);
           <div className='w-1/3'>
             <select defaultValue={student.devision} placeholder='Select Devision' {...register("devision",{required: true,})} className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30">
               {/* <option >Select Division</option> */}
-              <option value="1">First</option>
-              <option value="2">Second</option>
-              <option value="3">Third</option>
+              <option value="A">A</option>
+              <option value="B">B</option>
+              <option value="C">C</option>
+              <option value="D">D</option>
+              <option value="E">E</option>
+              
             </select>
             <p className='b-400'>{errors.devision?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
               
@@ -123,10 +136,10 @@ console.log(student);
 
           
           <div className='w-1/3'>
-            <input defaultValue={student.regno} placeholder='Enter roll number 0-99999' type="number" className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" {...register("regno", { required: true,min: 0, max: 99999 })} />
+            <input defaultValue={student.regno} placeholder='Enter roll number 0-99' type="number" className="bg-white w-full py-2 px-5 rounded-md border-[1px] focus:border-[#F33823] outline-none text-gray-600 placeholder-gray-600 border-[#F33823]/30" {...register("regno", { required: true,min: 0, max: 99 })} />
             <p className='b-400'>{errors.regno?.type === 'required' && <p role="alert" className='text-sm pl-2'>First name is required</p>}</p>
             <p className='b-400'>{errors.regno?.type === 'min' && <p role="alert" className='text-sm pl-2'>Min  0</p>}</p>
-            <p className='b-400'>{errors.regno?.type === 'max' && <p role="alert" className='text-sm pl-2'>Max  99999</p>}</p>
+            <p className='b-400'>{errors.regno?.type === 'max' && <p role="alert" className='text-sm pl-2'>Max  99</p>}</p>
               
           </div>
           </div>
