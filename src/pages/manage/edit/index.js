@@ -41,6 +41,9 @@ const onSubmit = (data,e) => {
                 },
               }
             );
+    setTimeout(()=>{
+      router.push('/manage')
+    },1300)
   })
   .catch(function(error) {
     console.error("Error updating document: ", error);
