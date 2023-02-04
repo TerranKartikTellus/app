@@ -110,7 +110,7 @@ const LoggedIn = ({students}) => {
   return (
    <div > 
 
-{blog.view && <div className='flex flex-col items-center justify-center fixed top-0 left-0 w-full h-screen bg-gray-100'>
+{blog.view && <div className='z-50 flex flex-col items-center justify-center fixed top-0 left-0 w-full h-screen bg-gray-100'>
       <div className=' w-8/12 h-4/6'>
       <Toaster
         position="top-center"
