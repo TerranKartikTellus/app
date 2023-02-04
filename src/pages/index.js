@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
@@ -12,6 +12,17 @@ export default function Home() {
   const [error, setError] = useState(null);
   const router = useRouter();
   const { signInWithEmailAndPassword } = useAuth();
+      // const { authUser, loading, signOut } = useAuth();
+  // const router = useRouter();
+      const { authUser, loading, signOut } = useAuth();
+  // const router = useRouter();
+
+  // Listen for changes on loading and authUser, redirect if needed
+  useEffect(() => {
+    
+    if (!loading && !authUser)
+      router.push('/')
+  }, [authUser, loading])
 
   const onSubmit = event => {
     setError(null)
@@ -29,7 +40,7 @@ export default function Home() {
   return (
     <div className=' w-full bg-r h-full'>
 
-      <Form onSubmit={onSubmit} className="text-sm">
+      {!authUser ? <Form onSubmit={onSubmit} className="text-sm">
           { error && <Alert color="danger">{error}</Alert>}
             <FormGroup row className='flex flex-row item-center justify-start space-x-12 p-2 '>
               <Label for="loginEmail" sm={4}>Email</Label>
@@ -66,6 +77,13 @@ export default function Home() {
             </Col>
           </FormGroup>
           </Form>
+          : <div className=''>
+              Add student: <Link legacyBehavior href="/add"><a className='underline'>here</a></Link>
+              <br></br>
+              Manage student list: <Link legacyBehavior href="/manage"><a className='underline'>here</a></Link>
+
+          </div>
+          }
     </div>
   )
 }

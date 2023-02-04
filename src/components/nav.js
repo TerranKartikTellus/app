@@ -15,7 +15,7 @@ export default function Nav(){
   }, [authUser, loading])
 
   return (
-    <div className='bg-slate-100 py-5 h-full px-5 top-0 flex flex-row items-center justify-between left-0 w-full bg-gen-400 h'>
+    <div className='bg-slate-100/30 py-5 h-full px-5 top-0 flex flex-row items-center justify-between left-0 w-full bg-gen-400 h'>
       <img className='' src="/logo.svg"></img>
       <Link href={authUser?.email ? "/manage" : "/signup"} legacyBehavior>
       <a  className='border-[1px] border-gray-700 flex flex-row items-center justify-between space-x-3 py-3 px-10 rounded-md'>
