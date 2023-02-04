@@ -11,7 +11,6 @@ export default function Edit({student,id}){
   const router = useRouter();
  const [time,settime] = useState(null);
  
-  // Listen for changes on loading and authUser, redirect if needed
   useEffect(() => {
     const current = new Date();
     const timee = current.toLocaleTimeString("en-US");
@@ -47,7 +46,6 @@ const onSubmit = (data,e) => {
   })
   .catch(function(error) {
     console.error("Error updating document: ", error);
-    // console.error("Error adding document: ", error);
               toast.error('Error updating document',{
                 icon: '👏',
                 style: {
@@ -211,6 +209,6 @@ export async function getServerSideProps(context) {
   }
   console.log(context);
   return {
-    props: {student: data, id: context.query.id}, // will be passed to the page component as props
+    props: {student: data, id: context.query.id}, 
   }
 }

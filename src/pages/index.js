@@ -12,12 +12,8 @@ export default function Home() {
   const [error, setError] = useState(null);
   const router = useRouter();
   const { signInWithEmailAndPassword } = useAuth();
-      // const { authUser, loading, signOut } = useAuth();
-  // const router = useRouter();
-      const { authUser, loading, signOut } = useAuth();
-  // const router = useRouter();
-
-  // Listen for changes on loading and authUser, redirect if needed
+ 
+  const { authUser, loading, signOut } = useAuth();
   useEffect(() => {
     
     if (!loading && !authUser)
