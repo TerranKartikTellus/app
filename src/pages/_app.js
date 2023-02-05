@@ -16,15 +16,18 @@ function MyApp({ Component, pageProps }) {
       router.push('/')
   }, [authUser, loading])
   console.log(authUser);
-  return <AuthUserProvider>
+
+  return <div className={router.asPath.includes('tool') ? 'bg-gray-900 text-gray-100 w-full h-full' : 'w-full h-full'}>
+    <AuthUserProvider className="">
     <Nav></Nav>
     <div className='flex flex-row h-full items-start justify-between font-sans font-medium'> 
-      <SideNav></SideNav>
+     {!router.asPath.includes('tool') && <SideNav></SideNav>}
       <div className='p-16  w-full '>
         <Component {...pageProps} />
       </div>
     </div>
   </AuthUserProvider>
+  </div>
 }
 
 export default MyApp
