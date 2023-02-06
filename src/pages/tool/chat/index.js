@@ -14,7 +14,7 @@ export default function Edit({student,id}){
   const configuration = new Configuration({
     apiKey: api,
   });
-  console.log(api)
+  // console.log(api)
   const openai = new OpenAIApi(configuration);
 
     const { authUser, loading, signOut } = useAuth();
