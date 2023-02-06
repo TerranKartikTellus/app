@@ -40,7 +40,7 @@ const openai = new OpenAIApi(configuration);
 
 const completion = await openai.createCompletion({
   model: "text-davinci-002",
-  prompt: "'"+input+"'"+" summarise this in 100 words",
+  prompt: "summarise the following text in 100 words "+"'"+input+"'",
   max_tokens : 1000,
 });
 console.log(completion.data.choices[0].text);
