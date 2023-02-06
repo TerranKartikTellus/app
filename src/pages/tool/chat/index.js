@@ -56,7 +56,7 @@ return(
     <div className='flex flex-row items-center justify-center space-x-3 w-full '>
       <textarea placeholder='Enter Short Text for Summarization' className='overflow-clip  text-ellipsis placeholder-gray-900 focus:border-[2px] focus:border-green-500 outline-0 p-2 w-5/12        text-gray-900 rounded-md h-[250px]'        onChange={(e)=>{setinput(e.target.value)}} ></textarea>
       
-      <div  placeholder='Summarized text will appear here  ' className={`${load=='Get' && "border-[1px] border-green-600 text-gray-100"} placeholder-gray-100 outline-0 p-2 w-5/12  rounded-md h-[250px]`} >{output}</div>
+      <div  placeholder='Summarized text will appear here  ' className={`${load=='Get' && "border-[1px] border-green-600 text-gray-100"} overflow-y-scroll placeholder-gray-100 outline-0 p-2 w-5/12  rounded-md h-[250px]`} >{output}</div>
     </div>
     <button onClick={onSubmit} className={` bg-green-600 rounded-sm text-gray-200 py-1 px-20 `}>{load}</button>
     </div>
