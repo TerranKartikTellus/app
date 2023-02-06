@@ -41,7 +41,7 @@ const openai = new OpenAIApi(configuration);
 const completion = await openai.createCompletion({
   model: "text-davinci-002",
   prompt: input,
-  token : 1000,
+  max_tokens : 1000,
 });
 console.log(completion.data.choices[0].text);
 completion.data && setoutput(completion.data.choices[0].text && completion.data.choices[0].text);
